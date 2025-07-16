@@ -1,0 +1,7 @@
+nltk
+speechrecognition
+gtts
+pydub
+scikit-learn
+matplotlib
+
