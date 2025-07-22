@@ -4,11 +4,13 @@ An AI-powered interview practice bot that conducts mock interviews using text-to
 
 ## Features
 
+- **Topic Selection**: Choose from 4 categorized topics or practice with all questions
 - **Text-to-Speech**: Questions are read aloud using Google Text-to-Speech (gTTS)
 - **Speech Recognition**: Captures and transcribes user responses via microphone
 - **Response Evaluation**: Uses TF-IDF vectorization and cosine similarity to score answers
 - **Visual Analytics**: Displays performance metrics with charts
-- **Randomized Questions**: Selects 5 random questions from your dataset for each session
+- **Smart Question Selection**: Selects up to 5 questions from your chosen topic
+- **Interactive Menu**: User-friendly interface for topic selection and session management
 
 ## Requirements
 
@@ -46,17 +48,32 @@ python interview_bot.py
 ```
 
 3. The bot will:
-   - Ask 5 random questions from your dataset
+   - Display a menu with 4 topic categories:
+     * **Algorithms** (sorting, searching, complexity analysis, etc.)
+     * **Data Structures** (trees, graphs, arrays, linked lists, etc.)
+     * **Operating Systems** (processes, memory management, scheduling, etc.)
+     * **Other CS Topics** (general computer science concepts)
+   - Allow you to select a specific topic or practice with all questions
+   - Ask up to 5 questions from your chosen topic
    - Play each question as audio
    - Listen for your spoken response (30-second timeout)
    - Calculate similarity between your answer and the expected answer
-   - Display results and visualizations
+   - Display results and optional visualizations
+   - Offer to continue with another topic
 
 ## How It Works
 
+### Topic Categorization
+The bot automatically categorizes questions into four main topics based on keyword analysis:
+
+1. **Algorithms**: Sorting algorithms, search algorithms, complexity analysis, dynamic programming, graph algorithms, etc.
+2. **Data Structures**: Trees, graphs, stacks, queues, arrays, linked lists, hash tables, heaps, etc.
+3. **Operating Systems**: Process management, memory management, scheduling, synchronization, deadlocks, etc.
+4. **Other CS Topics**: General computer science concepts that don't fit into the above categories
+
 ### Question Processing
-- Questions are loaded from `dataset.csv`
-- 5 random questions are selected for each interview session
+- Questions are loaded from `dataset.csv` and automatically categorized
+- Up to 5 questions are selected from your chosen topic
 - Questions are converted to speech using Google TTS
 
 ### Response Evaluation
